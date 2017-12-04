@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Exercise 3.0 - Using Ansible to Implement Security | Red Hat | Public Sector</title>
+
+    
+    
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/patternfly/dist/css/patternfly.min.css" />
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/patternfly/dist/css/patternfly-additions.min.css" />
+
+    
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/highlight.js/styles/darkula.css" />
+
+    
+    <link rel="stylesheet" href="http://redhatgov.io/css/main.css" />
+    <link rel="stylesheet" href="http://redhatgov.io/css/asciidoc.css" />
+    
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/jquery/dist/jquery.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/c3/c3.min.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/d3/d3.min.js"></script>
+
+    
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/drmonty-datatables-colvis/js/dataTables.colVis.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/datatables.net-colreorder/js/dataTables.colReorder.js"></script>
+
+    
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/dist/js/patternfly.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/patternfly-bootstrap-combobox/js/bootstrap-combobox.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/moment/min/moment.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-switch/dist/js/bootstrap-switch.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/patternfly-bootstrap-treeview/dist/bootstrap-treeview.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/google-code-prettify/bin/prettify.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/jquery-match-height/dist/jquery.matchHeight-min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/highlight.js/lib/highlight.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </head>
+  <body class="">
+    
+
+<nav class="navbar navbar-default navbar-inverse navbar-fixed-top " role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">
+        <img src="http://redhatgov.io/img/brand.png" alt="Red Hat | Public Sector" />
+      </a>
+    </div>
+    <div class="collapse navbar-collapse navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        
+        
+          
+            <li>
+              <a href="/">Home</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="/contact/">Contact</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="/events/">Events</a>
+            </li>
+          
+        
+          
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Workshops <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                
+                  <li>
+                    <a href="/workshops/ansible_tower/">Ansible Tower Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/cloudforms41/">CloudForms Workshops</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/security_containers/">Container Security Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/containers_101/">Containers 101 Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/example/">Example Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/jdv_dev/">JBoss Data Virtualization Development</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/strangling_the_monolith/">Microservices Workshop - Strangling the Monolith</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/openshift_101_dcmetromap/">OpenShift 101 - DC Metro Map Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/security_openshift/">OpenShift Security Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/rhosp_101/">Red Hat OpenStack Platform 101</a>
+                  </li>
+                
+              </ul>
+            </li>
+          
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<div class="jumbotron jumbotron-page text-center">
+  <h1>Exercise 3.0 - Using Ansible to Implement Security</h1>
+</div>
+
+<div class="container">
+  <div class="row">
+    <p class="text-center">
+      
+      <a href="http://redhatgov.io/workshops/ansible_tower">Return to Workshop</a>
+    </p>
+    
+    
+
+
+
+
+
+
+
+<nav>
+  <ul class="pager">
+    
+      <li class="previous">
+        <a href="http://redhatgov.io/workshops/ansible_tower/exercise2.2/">&larr; Previous: Exercise 2.2 - Creating and Running a Job Template</a>
+      </li>
+    
+    
+      <li class="next">
+        <a href="http://redhatgov.io/workshops/ansible_tower/wrapup/">Next: Wrapup &rarr;</a>
+      </li>
+    
+  </ul>
+</nav>
+
+
+    <div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>In this exercise, we are going to use Ansible Tower to run DISA STIG and NIST 800-53 evaluations of our environment.  Note that the NIST 800-53 role also includes the execution of DISA STIG evaluation against targeted hosts.</p>
+</div>
+<div class="paragraph">
+<p>DISA STIG controls
+<a href="https://galaxy.ansible.com/MindPointGroup/RHEL7-STIG/" class="bare">https://galaxy.ansible.com/MindPointGroup/RHEL7-STIG/</a></p>
+</div>
+<div class="paragraph">
+<p>NIST 800-53 controls
+<a href="https://galaxy.ansible.com/rhtps/800-53/" class="bare">https://galaxy.ansible.com/rhtps/800-53/</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_adding_the_disa_stig_and_nist_800_53_role_to_your_tower_node">Adding the DISA STIG and NIST 800-53 role to your Tower node</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_step_1">Step 1:</h3>
+<div class="paragraph">
+<p>In your wetty window (if you closed it, see the <a href="/workshops/ansible_tower/setup/">SETUP</a> step, in your workbook), type the following:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">sudo ansible-galaxy install rhtps.800-53</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_step_2">Step 2:</h3>
+<div class="paragraph">
+<p>Now that you have the role installed on your Tower node, we need to create a playbook that uses it.  First, let&#8217;s create a storage directory for playbooks, so that we can reference them from a Tower project, and then we&#8217;ll create the playbook:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">sudo mkdir -p /var/lib/awx/projects/playbooks</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_step_3">Step 3:</h3>
+<div class="paragraph">
+<p>Let&#8217;s create the needed playbook.  You should have a pretty good understanding of playbooks by now, so we won&#8217;t go over this, in detail.  Please do feel free to ask questions, though, if there is something that you don&#8217;t understand.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">sudo vim /var/lib/awx/projects/playbooks/800-53.yml</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Note the use of the <a href="http://docs.ansible.com/ansible/latest/playbooks_conditionals.html#register-variables">register</a>, <a href="http://docs.ansible.com/ansible/latest/playbooks_loops.html#standard-loops">with_items</a>, and <a href="http://docs.ansible.com/ansible/latest/playbooks_conditionals.html#the-when-statement">when</a> directives.  These are how Ansible implements variable creation, recursion, and conditionals, respectively.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">---
+- hosts: web
+  become: yes
+  vars:
+    scap_reports_dir: /tmp
+    scap_profile: stig-rhel7-disa
+  roles:
+    - rhtps.800-53
+
+  tasks:
+    - name: determine the most recent scap report
+      command: ls -tr /tmp/scap_reports/
+      register: results
+
+    - name: create the scap directory in the web server content
+      file:
+        name: /var/www/html/scap
+        state: directory
+        mode: 0755
+
+    - name: copy SCAP reports to the web server content directory
+      copy:
+        remote_src: True
+        src: "/tmp/scap_reports/{{ item }}"
+        dest: /var/www/html/scap
+        mode: 0644
+      with_items: "{{ results.stdout_lines }}"
+      when: item | match("scan-xccdf-report-*")</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_step_4">Step 4:</h3>
+<div class="paragraph">
+<p>Save and quit from editing, and then we will move on to the in-Tower setup.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_configuring_a_security_project_and_job_template_in_ansible_tower">Configuring a security project and job template in Ansible Tower</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_step_1_2">Step 1:</h3>
+<div class="paragraph">
+<p>In your Tower window, click on <span class="image"><img src="/workshops/ansible_tower/images/at_projects_icon.png" alt="PROJECTS"></span></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_step_2_2">Step 2:</h3>
+<div class="paragraph">
+<p>Select ADD     <span class="image"><img src="/workshops/ansible_tower/images/at_add.png" alt="Add" width="35" height="25"></span></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_step_3_2">Step 3:</h3>
+<div class="paragraph">
+<p>Enter the following values into your new project.  Note that the <code>PLAYBOOK DIRECTORY</code> item should show <code>playbooks</code>, as an option, when you click on it.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NAME</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NIST 800-53 and DISA STIG</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DESCRIPTION</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Security Project</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ORGANIZATION</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Default</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SCM TYPE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Manual</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PROJECT BASE PATH</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/var/lib/awx/projects</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PLAYBOOK DIRECTORY</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">playbooks</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_step_4_2">Step 4:</h3>
+<div class="paragraph">
+<p>Select SAVE     <span class="image"><img src="/workshops/ansible_tower/images/at_save.png" alt="Save" width="35" height="25"></span></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_step_5">Step 5:</h3>
+<div class="paragraph">
+<p>In your Tower window, click on <code>TEMPLATES</code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_step_6">Step 6:</h3>
+<div class="paragraph">
+<p>Click on ADD <span class="image"><img src="/workshops/ansible_tower/images/at_add.png" alt="Add" width="35" height="25"></span>, and select <code>JOB TEMPLATE</code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_step_7">Step 7:</h3>
+<div class="paragraph">
+<p>Complete the form using the following values.  Note that the <code>PLAYBOOK</code> field should offer <code>800-53.yml</code> as an option, when clicked.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NAME</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NIST 800-53 and DISA STIG Job Template</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DESCRIPTION</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Template for security playbooks</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JOB TYPE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Run</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">INVENTORY</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ansible Workshop Inventory</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PROJECT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NIST 800-53 and DISA STIG</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PLAYBOOK</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">800-53.yml</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MACHINE CREDENTIAL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ansible Workshop Credential</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LIMIT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">web</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OPTIONS</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="ulist checklist">
+<ul class="checklist">
+<li>
+<p><i class="fa fa-check-square-o"></i> Enable Privilege Escalation</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_step_8">Step 8:</h3>
+<div class="paragraph">
+<p>Click SAVE <span class="image"><img src="/workshops/ansible_tower/images/at_save.png" alt="Save"></span>, to store your new template, and we are ready to run it.</p>
+</div>
+<div class="paragraph">
+<p>Click on the rocketship icon <span class="image"><img src="/workshops/ansible_tower/images/at_launch_icon.png" alt="Add" width="35" height="25"></span> next to the <code>NIST 800-53 Job Template</code> entry, to launch the job.</p>
+</div>
+<div class="paragraph">
+<p>You can see what the job looks like, as it is executing, and what the SCAP results look like, when uploaded to your second node, in the panel, below.</p>
+</div>
+<div class="paragraph">
+<div class="panel-group">
+  
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" href="#collapse10f1fe24194aefae21ee3aa7b963c7f8" class="collapsed">
+        Job Status
+      </a>
+    </h4>
+  </div>
+  <div id="collapse10f1fe24194aefae21ee3aa7b963c7f8" class="panel-collapse collapse">
+    <div class="panel-body">
+       <div class="paragraph">
+<p><span class="image"><img src="/workshops/ansible_tower/images/at_800-53_job_status.png" alt="Job Status"></span></p>
+</div>
+
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" href="#collapsef31bf8339502cbecb6d037d412d5c791" class="collapsed">
+        Results
+      </a>
+    </h4>
+  </div>
+  <div id="collapsef31bf8339502cbecb6d037d412d5c791" class="panel-collapse collapse">
+    <div class="panel-body">
+       <div class="paragraph">
+<p><span class="image"><img src="/workshops/ansible_tower/images/at_scap_report.png" alt="SCAP Report"></span></p>
+</div>
+
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+</div>
+</div>
+<div class="sect2">
+<h3 id="_end_result">End Result</h3>
+<div class="paragraph">
+<p>You can watch the scan run against your managed node.  Note that each compliance check is named and detailed.</p>
+</div>
+<div class="paragraph">
+<p>Once the check is complete, you can open a new tab in your web browser, and navigate to the following URL, where <code>workshopname</code> is the workshop prefix, and <code>#</code> is the number that your instructor gave you:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">http://workshopname.node.#.redhatgov.io/scap</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Click on the link called <code>scan-xccdf-report-&#8230;&#8203;</code> to refiew the SCAP report that was generated.  Note the failures in the report; look at the machines, if you want, via your Wetty ssh session, to see what the problems might be.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+    
+
+
+
+
+
+
+
+<nav>
+  <ul class="pager">
+    
+      <li class="previous">
+        <a href="http://redhatgov.io/workshops/ansible_tower/exercise2.2/">&larr; Previous: Exercise 2.2 - Creating and Running a Job Template</a>
+      </li>
+    
+    
+      <li class="next">
+        <a href="http://redhatgov.io/workshops/ansible_tower/wrapup/">Next: Wrapup &rarr;</a>
+      </li>
+    
+  </ul>
+</nav>
+
+
+    <p class="text-center">
+      
+      <a href="http://redhatgov.io/workshops/ansible_tower">Return to Workshop</a>
+    </p>
+  </div>
+</div>
+
+    <div id="page-footer" class="container">
+      <p class="text-center">
+        Copyright &copy; 2017 Red Hat, Inc.
+      </p>
+    </div>
+  </body>
+</html>
+

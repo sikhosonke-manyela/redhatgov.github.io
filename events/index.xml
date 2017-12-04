@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Events on Red Hat | Public Sector</title>
+    <link>http://redhatgov.io/events/</link>
+    <description>Recent content in Events on Red Hat | Public Sector</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 18 Jan 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://redhatgov.io/events/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Containers and Cloud Native Roadshow</title>
+      <link>http://redhatgov.io/events/20180118-containers-and-cloud-native-roadshow-119ab7490395a911066587eb67123f5d/</link>
+      <pubDate>Thu, 18 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/events/20180118-containers-and-cloud-native-roadshow-119ab7490395a911066587eb67123f5d/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Containers and Cloud Native Roadshow</title>
+      <link>http://redhatgov.io/events/20180116-containers-and-cloud-native-roadshow-8db0dbefc7cdd450807bd82d53e997d2/</link>
+      <pubDate>Tue, 16 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/events/20180116-containers-and-cloud-native-roadshow-8db0dbefc7cdd450807bd82d53e997d2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ansible Automation: Technical Workshop</title>
+      <link>http://redhatgov.io/events/20171213-ansible-automation-technical-workshop-c48331f41d9d0381f6cedfdae3924efe/</link>
+      <pubDate>Wed, 13 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/events/20171213-ansible-automation-technical-workshop-c48331f41d9d0381f6cedfdae3924efe/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ansible Automates</title>
+      <link>http://redhatgov.io/events/20171212-ansible-automates-62c47eea75ae5eb025fe0b4423efa51f/</link>
+      <pubDate>Tue, 12 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/events/20171212-ansible-automates-62c47eea75ae5eb025fe0b4423efa51f/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ansible Automation: Technical Workshop</title>
+      <link>http://redhatgov.io/events/20171212-ansible-automation-technical-workshop-555e99d4978cfab8d95680ddb8eb45fe/</link>
+      <pubDate>Tue, 12 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/events/20171212-ansible-automation-technical-workshop-555e99d4978cfab8d95680ddb8eb45fe/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Red Hat Public Sector Partner Training</title>
+      <link>http://redhatgov.io/events/20171212-red-hat-public-sector-partner-training-cf605404054cbe4b60c1e9a3d0617ec8/</link>
+      <pubDate>Tue, 12 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/events/20171212-red-hat-public-sector-partner-training-cf605404054cbe4b60c1e9a3d0617ec8/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ansible Automation: Technical Workshop</title>
+      <link>http://redhatgov.io/events/20171207-ansible-automation-technical-workshop-80a1bf17241b8b1b1f9ee38e8e16d822/</link>
+      <pubDate>Thu, 07 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/events/20171207-ansible-automation-technical-workshop-80a1bf17241b8b1b1f9ee38e8e16d822/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The transformational power of mobile apps, BPM, and IoT in field workforce management</title>
+      <link>http://redhatgov.io/events/20171207-the-transformational-power-of-mobile-apps-bpm-and-iot-in-field-workforce-management-517c8db4c09a659710337d4728e0f9f9/</link>
+      <pubDate>Thu, 07 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/events/20171207-the-transformational-power-of-mobile-apps-bpm-and-iot-in-field-workforce-management-517c8db4c09a659710337d4728e0f9f9/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ansible Automation: Technical Workshop</title>
+      <link>http://redhatgov.io/events/20171206-ansible-automation-technical-workshop-12082f735f2b68061a560140deade3a2/</link>
+      <pubDate>Wed, 06 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/events/20171206-ansible-automation-technical-workshop-12082f735f2b68061a560140deade3a2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jumpstart your agencies journey to the cloud with Red Hat JBoss EAP</title>
+      <link>http://redhatgov.io/events/20171206-jumpstart-your-agencies-journey-to-the-cloud-with-red-hat-jboss-eap-fb68ab3cf33ab4fbcaf150099527ce35/</link>
+      <pubDate>Wed, 06 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/events/20171206-jumpstart-your-agencies-journey-to-the-cloud-with-red-hat-jboss-eap-fb68ab3cf33ab4fbcaf150099527ce35/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Achieving True Integration Agility with Microservices, Containerization, and APIs</title>
+      <link>http://redhatgov.io/events/20171205-achieving-true-integration-agility-with-microservices-containerization-and-apis-bd37bdb6798d86f6a4a570fd9816f7fc/</link>
+      <pubDate>Tue, 05 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/events/20171205-achieving-true-integration-agility-with-microservices-containerization-and-apis-bd37bdb6798d86f6a4a570fd9816f7fc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ansible Automation: Technical Workshop</title>
+      <link>http://redhatgov.io/events/20171205-ansible-automation-technical-workshop-703422d70810689a55131e4e540a1b72/</link>
+      <pubDate>Tue, 05 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/events/20171205-ansible-automation-technical-workshop-703422d70810689a55131e4e540a1b72/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Telco Partner Conference</title>
+      <link>http://redhatgov.io/events/20171205-telco-partner-conference-a0c4f6e4631b6355837d0bca07faaca1/</link>
+      <pubDate>Tue, 05 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/events/20171205-telco-partner-conference-a0c4f6e4631b6355837d0bca07faaca1/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
